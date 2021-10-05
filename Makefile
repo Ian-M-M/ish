@@ -1,2 +1,2 @@
 main:
-	gcc -o ish ./src/main.c 
+	gcc -o ish ./src/main.c ./src/liner.c
