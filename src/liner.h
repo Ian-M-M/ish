@@ -24,8 +24,13 @@
 
 #define USER getenv("USER")
 
-/************************************
-* @return: line read by command line*
-*************************************/
+void clearScreen();
+
+int printNames();
+
+int printWorkD();
+
+int reader(char * line);
+
 int readLine(line);
 #endif //ISH_LINER
