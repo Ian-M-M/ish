@@ -6,6 +6,9 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+// CLEAR SCREEN //
+#define CLEAR_SCREEN_ANSI "\e[1;1H\e[2J"
+
 // COLORS //
 #define ISH_Black       "\033[0;30m"
 #define ISH_Red         "\033[0;31m"

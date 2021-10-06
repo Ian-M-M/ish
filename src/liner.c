@@ -1,5 +1,9 @@
 #include "liner.h"
 
+void clearScreen(){
+    printf("%s", CLEAR_SCREEN_ANSI);
+}
+
 int printNames(){
     if (USER == NULL) return -1;
     printf("ish:%s@%s%s~", ISH_Green, USER, ISH_COLOR_RESET);
@@ -22,6 +26,7 @@ int reader(char * line){
 }
 
 int readLine(char * line){
+    clearScreen();
     if (printNames() != 0) return -1;
     if (printWorkD() != 0) return -2;
     if (reader(line) != 0) return -3;
