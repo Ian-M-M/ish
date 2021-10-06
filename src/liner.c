@@ -26,7 +26,6 @@ int reader(char * line){
 }
 
 int readLine(char * line){
-    clearScreen();
     if (printNames() != 0) return -1;
     if (printWorkD() != 0) return -2;
     if (reader(line) != 0) return -3;

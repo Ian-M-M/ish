@@ -11,6 +11,7 @@ int main() {
 	*		- execute the commands
 	*/
 	char line [ISH_MAX_STR_SIZE];
+	clearScreen();
 
 	while (1){
 		if (readLine(line) != 0) continue;
