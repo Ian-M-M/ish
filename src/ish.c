@@ -1,4 +1,6 @@
 #include "liner.h"
+#include "parser.h"
+#include "ish.h"
 
 int main() {
         
@@ -16,7 +18,7 @@ int main() {
 	while (1){
 		if (readLine(line) != 0) continue;
 		printf("%s\n", line);
-		// parseLine();
+		// parseLine(line);
 		// pipeline();
 		// execute();
 	}

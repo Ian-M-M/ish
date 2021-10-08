@@ -1,4 +1,5 @@
 #include "liner.h"
+#include "ish.h"
 
 void clearScreen(){
     printf("%s", CLEAR_SCREEN_ANSI);
