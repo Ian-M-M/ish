@@ -1,6 +1,9 @@
 #ifndef ISH_PARSER
 #define ISH_PARSER
 
-void parser(char * line);
+#include <stdio.h>
+#include <string.h>
+
+void parseLine(char * line, char ** cmds);
 
 #endif //ISH_PARSER

@@ -18,7 +18,7 @@ int main() {
 	while (1){
 		if (readLine(line) != 0) continue;
 		printf("%s\n", line);
-		// parseLine(line);
+		// parseLine(line, cmds);
 		// pipeline();
 		// execute();
 	}
