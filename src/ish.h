@@ -20,6 +20,7 @@
 #define CLEAR_SCREEN_ANSI "\e[1;1H\e[2J"
 // String size
 #define ISH_MAX_STR_SIZE 100
+#define ISH_MAX_CMD_SIZE 3
 
 int main();
 

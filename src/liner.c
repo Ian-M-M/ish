@@ -20,15 +20,18 @@ int printWorkD(){
 }
 
 int reader(char * line){
+    printf("[DEBUG LINER.reader()] 1, line size => %zu\n", strlen(line));
     if (fgets(line, ISH_MAX_STR_SIZE, stdin) == NULL){
         return -1;
     }
     return 0;
-}
+} __always_inline
 
 int readLine(char * line){
     if (printNames() != 0) return -1;
     if (printWorkD() != 0) return -2;
+    printf("[DEBUG LINER] 1\n");
     if (reader(line) != 0) return -3;
+    printf("[DEBUG LINER] 2\n");
     return 0;
 }

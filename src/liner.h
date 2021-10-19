@@ -11,5 +11,5 @@ int printWorkD();
 
 int reader(char * line);
 
-int readLine(line);
+int readLine(char * line);
 #endif //ISH_LINER

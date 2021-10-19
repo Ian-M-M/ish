@@ -12,13 +12,48 @@ int main() {
 	*		- acknowledge the differents pipe communications
 	*		- execute the commands
 	*/
-	char line [ISH_MAX_STR_SIZE];
-	clearScreen();
+	int i, j;
+	printf("[DEBUG]: 1 %ld\n", sizeof(char) * ISH_MAX_STR_SIZE);
+	char *  line = (char * ) malloc(sizeof(char) * ISH_MAX_STR_SIZE + 1);
+	if (line == NULL){
+		printf("[ERROR] can't allocate a line.\n");
+		return -1;
+	}
+	for (i = 0; i < ISH_MAX_STR_SIZE; i++)
+	{
+		*(line + i) = '0';
+	}
+	*(line + i) = '\0';
+	printf("[DEBUG]: 2 %zu\n", strlen(line));
+	char ** cmds = (char **) malloc(sizeof(char) * ISH_MAX_CMD_SIZE * ISH_MAX_STR_SIZE + 1);
+	if (cmds == NULL){
+		printf("[ERROR] can't allocate cmds.\n");
+		return -1;
+	}
+	printf("[DEBUG]: 3\n");
+	for (i = 0; i < ISH_MAX_CMD_SIZE; i++){
+		for (j = 0; j < ISH_MAX_STR_SIZE; j++){
+			//printf("[DEBUG]: 4 i[%d] j[%d] pointer [%d]\n", i, j, (i * ISH_MAX_CMD_SIZE) + j);
+			*(cmds + (i * ISH_MAX_CMD_SIZE) + j) = "0";
+		}
+	}
+	printf("[DEBUG]: 5\n");
+	
+	//clearScreen();
+
+	printf("[DEBUG]: 6\n");
 
 	while (1){
 		if (readLine(line) != 0) continue;
-		printf("%s\n", line);
-		// parseLine(line, cmds);
+		printf("[READ LINE]:\n\t%s\n", line);
+		if (parseLine(line, cmds) != 0) continue;
+		printf("[PARSE LINE]:\n");
+		for (i = 0; i < ISH_MAX_CMD_SIZE; i++){
+			for (j = 0; j < ISH_MAX_STR_SIZE; j++){
+				printf("[%d] %s\n", i, *(cmds + (i * ISH_MAX_CMD_SIZE) + j));
+				if (*(cmds + (i * ISH_MAX_CMD_SIZE) + j) == "0") break;
+			}
+		}
 		// pipeline();
 		// execute();
 	}

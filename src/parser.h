@@ -3,7 +3,8 @@
 
 #include <stdio.h>
 #include <string.h>
+#include "ish.h"
 
-void parseLine(char * line, char ** cmds);
+int parseLine(char * line, char ** cmds);
 
 #endif //ISH_PARSER
