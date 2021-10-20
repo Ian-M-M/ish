@@ -1,5 +1,6 @@
 #ifndef ISH_LINER
 #define ISH_LINER
+#include "ish.h"
 
 #define USER getenv("USER")
 

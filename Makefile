@@ -1,4 +1,5 @@
-SRC = ./src/ish.c ./src/liner.c ./src/parser.c
+CC = c99
+SRC = ./src/ish.c ./src/liner.c ./src/parser.c 
 
 main:
-	gcc -o ish $(SRC) 
+	$(CC) -o ish $(SRC) 

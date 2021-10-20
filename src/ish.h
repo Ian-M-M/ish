@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+
 // COLORS //
 #define ISH_Black       "\033[0;30m"
 #define ISH_Red         "\033[0;31m"
@@ -21,6 +22,8 @@
 // String size
 #define ISH_MAX_STR_SIZE 100
 #define ISH_MAX_CMD_SIZE 3
+
+char debugMsg [ISH_MAX_STR_SIZE];
 
 int main();
 
